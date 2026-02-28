@@ -1,0 +1,24 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SplashScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "SilentSpeak",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 98
+        }
+      },
+      {
+        "comment": "",
+        "key": "Empowering Every Voice",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 112
+        }
+      }
+    ]
+  },
+  "version": 1
+}

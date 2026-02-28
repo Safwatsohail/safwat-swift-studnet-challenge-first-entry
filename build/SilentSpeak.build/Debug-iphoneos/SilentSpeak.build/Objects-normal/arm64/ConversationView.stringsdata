@@ -1,0 +1,192 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ConversationView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "SilentSpeak",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mode: %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "·",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 155
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "Starting camera…",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 181
+        }
+      },
+      {
+        "comment": "",
+        "key": "Camera access needed",
+        "location": {
+          "startingColumn": 72,
+          "startingLine": 181
+        }
+      },
+      {
+        "comment": "",
+        "key": "Allow Access",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 186
+        }
+      },
+      {
+        "comment": "",
+        "key": "Predictions — tap to select",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 207
+        }
+      },
+      {
+        "comment": "",
+        "key": "Retry",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 223
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 285
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 274
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 358
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign to build a sentence",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 389
+        }
+      },
+      {
+        "comment": "",
+        "key": "Play",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 431
+        }
+      },
+      {
+        "comment": "",
+        "key": "Send & Speak",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 467
+        }
+      },
+      {
+        "comment": "",
+        "key": "Edit sentence…",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 516
+        }
+      },
+      {
+        "comment": "",
+        "key": "Spoken words appear here",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 577
+        }
+      },
+      {
+        "comment": "",
+        "key": "Listening…",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 659
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to speak",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 659
+        }
+      },
+      {
+        "comment": "",
+        "key": "Replay",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 715
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 776
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mode",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 815
+        }
+      }
+    ]
+  },
+  "version": 1
+}

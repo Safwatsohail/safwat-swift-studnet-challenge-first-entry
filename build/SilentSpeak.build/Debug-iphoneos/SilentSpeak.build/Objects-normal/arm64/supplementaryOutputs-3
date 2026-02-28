@@ -1,0 +1,30 @@
+{
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ASLSignImageView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/AnimatedGradientView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/AnimationStyles.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ConversationView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.swiftdeps"
+  }
+}

@@ -1,0 +1,2 @@
+This is a placeholder for ASL_A.jpg
+Replace this file with your actual ASL image for the letter A.

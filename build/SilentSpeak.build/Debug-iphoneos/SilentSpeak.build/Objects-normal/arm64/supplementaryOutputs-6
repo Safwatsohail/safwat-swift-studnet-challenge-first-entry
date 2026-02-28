@@ -1,0 +1,30 @@
+{
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/RootTabView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SettingsView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SoundDetectionView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SplashScreen.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.swiftdeps"
+  }
+}

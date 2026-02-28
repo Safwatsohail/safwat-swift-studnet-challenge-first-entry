@@ -1,0 +1,16 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/DictionaryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Search gestures...",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 76
+        }
+      }
+    ]
+  },
+  "version": 1
+}

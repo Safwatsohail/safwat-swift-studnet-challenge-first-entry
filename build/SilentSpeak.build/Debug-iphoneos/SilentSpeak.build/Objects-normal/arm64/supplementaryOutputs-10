@@ -1,0 +1,23 @@
+{
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/MyTabularClassifier 1/MyTabularClassifier 1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/safwatcool_1/safwatcool_1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps"
+  }
+}

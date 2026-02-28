@@ -1,0 +1,489 @@
+{
+  "" : {
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeak-primary.dia",
+    "emit-module-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeak-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeak-primary-emit-module.dia",
+    "pch" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeak-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeak-primary.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/AppleVisionHandClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AppleVisionHandClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/ContentView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/CreateMLGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/CreateMLGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/GeometricGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeometricGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/HybridGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HybridGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Managers/ASLCameraManager.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLCameraManager~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Managers/ConversationStore.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationStore~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Managers/SoundDetectionManager.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionManager~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/MediaPipeGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MediaPipeGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Models/ASLDictionaryData.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLDictionaryData~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Models/Conversation.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Models/FullASLDictionary.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullASLDictionary~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/RealGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RealGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/SilentSpeakApp.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakApp~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/SilentSpeakView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SilentSpeakView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/SpeechRecognizer.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SpeechRecognizer~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/ASLImageLoader.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageLoader~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/ASLImageProvider.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLImageProvider~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/ASLTextConverter.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLTextConverter~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/HapticManager.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HapticManager~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/LanguageManager.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/PeacefulAnimations.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/WordSuggestions.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ASLSignImageView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ASLSignImageView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/AnimatedGradientView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimatedGradientView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/AnimationStyles.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/AnimationStyles~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ConversationView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ConversationView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/DesignSystem.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DesignSystem~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/DictionaryView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/DictionaryView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/FullDictionaryView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/FullDictionaryView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/HomeView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/MemoryView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MemoryView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/OnboardingView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/OnboardingView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ParticleEffectView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ParticleEffectView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ProfessionalOnboardingView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/ProfessionalOnboardingView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/RootTabView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/RootTabView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SettingsView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SoundDetectionView.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SoundDetectionView~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SplashScreen.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/SplashScreen~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/TutorialOverlay.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/TutorialOverlay~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/WavyBackground.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WavyBackground~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/WorkingGestureClassifier.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WorkingGestureClassifier~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/GestureModel1/GestureModel1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GestureModel1~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/MyTabularClassifier 1/MyTabularClassifier 1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/MyTabularClassifier 1~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/mega 1/mega 1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 1~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/mega 2 copy/mega 2 copy.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/mega 2 copy~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/CoreMLGenerated/safwatcool_1/safwatcool_1.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/safwatcool_1~partial.swiftmodule"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

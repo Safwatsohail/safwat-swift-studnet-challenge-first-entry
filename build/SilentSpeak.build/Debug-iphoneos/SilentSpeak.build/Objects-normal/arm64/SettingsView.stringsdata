@@ -1,0 +1,256 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Reset Settings",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 276
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 53
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 70,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "Font Size",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lldpt",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Mic Sensitivity",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 107
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "Text-to-Speech Voice",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speech Rate",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 154
+        }
+      },
+      {
+        "comment": "",
+        "key": "Slow",
+        "location": {
+          "startingColumn": 61,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fast",
+        "location": {
+          "startingColumn": 89,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "Normal",
+        "location": {
+          "startingColumn": 98,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speech Pitch",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "Low",
+        "location": {
+          "startingColumn": 62,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "High",
+        "location": {
+          "startingColumn": 90,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "Normal",
+        "location": {
+          "startingColumn": 99,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "Gesture Recognition Speed",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 204
+        }
+      },
+      {
+        "comment": "",
+        "key": "Slow",
+        "location": {
+          "startingColumn": 63,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fast",
+        "location": {
+          "startingColumn": 93,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "Normal",
+        "location": {
+          "startingColumn": 102,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset to Defaults",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 251
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 277
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reset",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 278
+        }
+      },
+      {
+        "comment": "",
+        "key": "This will reset all settings to their default values.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 297
+        }
+      },
+      {
+        "comment": "",
+        "key": "SilentSpeak User",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 321
+        }
+      },
+      {
+        "comment": "",
+        "key": "Personal Settings",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 324
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 376
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select Voice",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 417
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 421
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ • %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 461
+        }
+      }
+    ]
+  },
+  "version": 1
+}

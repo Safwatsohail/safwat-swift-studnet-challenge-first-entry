@@ -1,0 +1,144 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/MemoryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Clear All Memory",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete All",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "This will permanently delete all your saved phrases.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 148
+        }
+      },
+      {
+        "comment": "",
+        "key": "Memory Bank",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld saved phrases",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 163
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear All",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 251
+        }
+      },
+      {
+        "comment": "",
+        "key": "No phrases in %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 333
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add phrases you use often for quick access",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 337
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Phrase",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 431
+        }
+      },
+      {
+        "comment": "",
+        "key": "Phrase",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 379
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enter your phrase...",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 383
+        }
+      },
+      {
+        "comment": "",
+        "key": "Category",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 394
+        }
+      },
+      {
+        "comment": "",
+        "key": "Category",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 398
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save Phrase",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 416
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 435
+        }
+      }
+    ]
+  },
+  "version": 1
+}

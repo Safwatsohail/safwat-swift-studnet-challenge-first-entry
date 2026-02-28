@@ -1,0 +1,30 @@
+{
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Models/Conversation.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/Conversation.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/LanguageManager.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/LanguageManager.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/PeacefulAnimations.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/PeacefulAnimations.swiftdeps"
+  },
+  "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Utilities/WordSuggestions.swift" : {
+    "const-values" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.swiftconstvalues",
+    "dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.d",
+    "diagnostics" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.dia",
+    "object" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.o",
+    "swift-dependencies" : "/Users/safwatsohail/Downloads/SilentSpeak/build/SilentSpeak.build/Debug-iphoneos/SilentSpeak.build/Objects-normal/arm64/WordSuggestions.swiftdeps"
+  }
+}

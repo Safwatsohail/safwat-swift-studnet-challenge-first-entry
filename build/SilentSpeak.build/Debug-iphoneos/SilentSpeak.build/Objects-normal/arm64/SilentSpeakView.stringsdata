@@ -1,0 +1,64 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/SilentSpeakView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Deaf User",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hearing User",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "Listening...",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to speak",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Replay",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 188
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Conversation",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 198
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 208
+        }
+      }
+    ]
+  },
+  "version": 1
+}

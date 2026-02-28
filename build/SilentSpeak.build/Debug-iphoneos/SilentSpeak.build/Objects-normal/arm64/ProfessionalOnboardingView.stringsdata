@@ -1,0 +1,120 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/ProfessionalOnboardingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Skip",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "Welcome to",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 226
+        }
+      },
+      {
+        "comment": "",
+        "key": "SilentSpeak",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 232
+        }
+      },
+      {
+        "comment": "",
+        "key": "Breaking barriers through\nthe power of communication",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 238
+        }
+      },
+      {
+        "comment": "",
+        "key": "Permissions",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 359
+        }
+      },
+      {
+        "comment": "",
+        "key": "We need a few permissions to provide\nthe best experience",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 365
+        }
+      },
+      {
+        "comment": "",
+        "key": "Get Started",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 406
+        }
+      },
+      {
+        "comment": "",
+        "key": "Continue",
+        "location": {
+          "startingColumn": 55,
+          "startingLine": 406
+        }
+      },
+      {
+        "comment": "",
+        "key": "Allow",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 468
+        }
+      },
+      {
+        "comment": "",
+        "key": "Interactive Guide",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 574
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap any feature to learn what it does",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 580
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to learn more",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 643
+        }
+      }
+    ]
+  },
+  "version": 1
+}

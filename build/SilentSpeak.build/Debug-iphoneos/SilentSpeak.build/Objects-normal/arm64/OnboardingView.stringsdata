@@ -1,0 +1,224 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/OnboardingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Skip",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "Back",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 95
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "A real-time bridge between\ndeaf and hearing communication",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 196
+        }
+      },
+      {
+        "comment": "",
+        "key": "Welcome to",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 184
+        }
+      },
+      {
+        "comment": "",
+        "key": "SilentSpeak",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 188
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 228
+        }
+      },
+      {
+        "comment": "",
+        "key": "Real-time",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 245
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speech",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 255
+        }
+      },
+      {
+        "comment": "",
+        "key": "Two-Way Translation",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 271
+        }
+      },
+      {
+        "comment": "",
+        "key": "SilentSpeak translates between sign language\nand spoken words in real time",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 275
+        }
+      },
+      {
+        "comment": "",
+        "key": "Front Camera Active",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 319
+        }
+      },
+      {
+        "comment": "",
+        "key": "The front camera captures hand gestures and\ntranslates sign language into readable text",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 354
+        }
+      },
+      {
+        "comment": "",
+        "key": "Deaf User Side",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 349
+        }
+      },
+      {
+        "comment": "",
+        "key": "Listening...",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 419
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hello, how are you today?",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 389
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap the mic to start speaking. Your words\nare transcribed live for the deaf user to read",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 445
+        }
+      },
+      {
+        "comment": "",
+        "key": "Hearing User Side",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 440
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose Your Voice",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 495
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select the voice that will speak\nyour messages aloud",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 501
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speech Speed",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 556
+        }
+      },
+      {
+        "comment": "",
+        "key": "Slow",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 560
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fast",
+        "location": {
+          "startingColumn": 77,
+          "startingLine": 560
+        }
+      },
+      {
+        "comment": "",
+        "key": "Normal",
+        "location": {
+          "startingColumn": 86,
+          "startingLine": 560
+        }
+      },
+      {
+        "comment": "",
+        "key": "You're All Set!",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 663
+        }
+      },
+      {
+        "comment": "",
+        "key": "Permissions will be requested when you\nfirst use each feature",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 667
+        }
+      },
+      {
+        "comment": "",
+        "key": "Get Started",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 682
+        }
+      }
+    ]
+  },
+  "version": 1
+}

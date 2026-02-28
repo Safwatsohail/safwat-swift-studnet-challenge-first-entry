@@ -1,0 +1,72 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/FullDictionaryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld signs",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "ASL Dictionary",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 85
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld signs with instructions",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search signs...",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "How to Sign",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 299
+        }
+      },
+      {
+        "comment": "",
+        "key": "Source: Lifeprint.com — Dr. Bill Vicars (ASL University)",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 323
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 336
+        }
+      },
+      {
+        "comment": "",
+        "key": "No image available",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 373
+        }
+      }
+    ]
+  },
+  "version": 1
+}

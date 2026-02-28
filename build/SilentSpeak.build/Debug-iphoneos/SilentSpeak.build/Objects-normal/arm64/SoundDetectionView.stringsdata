@@ -1,0 +1,96 @@
+{
+  "source": "/Users/safwatsohail/Downloads/SilentSpeak/SilentSpeak/Views/SoundDetectionView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Sound Detector",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 87
+        }
+      },
+      {
+        "comment": "",
+        "key": "Listening actively...",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "Tap to activate",
+        "location": {
+          "startingColumn": 70,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "Listening",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 179
+        }
+      },
+      {
+        "comment": "",
+        "key": "Paused",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 186
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 214
+        }
+      },
+      {
+        "comment": "",
+        "key": "Active Signals",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 254
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 278
+        }
+      },
+      {
+        "comment": "",
+        "key": "Recent Alerts",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 298
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 302
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 342
+        }
+      }
+    ]
+  },
+  "version": 1
+}
