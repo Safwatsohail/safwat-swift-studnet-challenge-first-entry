@@ -388,6 +388,36 @@ enum SoundType: String, CaseIterable {
             return .normal
         }
     }
+
+    var isPriorityAlert: Bool {
+        switch self {
+        case .ambulance,
+             .fireTruck,
+             .policeSiren,
+             .smokeAlarm,
+             .carbonMonoxide,
+             .glassBreaking,
+             .explosion,
+             .gunshot,
+             .scream,
+             .carCrash,
+             .babyCrying,
+             .crying,
+             .shouting,
+             .doorbell,
+             .phoneRinging,
+             .textNotification,
+             .alarmClock,
+             .timerBeep,
+             .microwaveBeep,
+             .ovenTimer,
+             .carHorn,
+             .trainHorn:
+            return true
+        default:
+            return false
+        }
+    }
     
     var color: [Double] {
         switch urgencyLevel {
@@ -418,9 +448,11 @@ enum SoundType: String, CaseIterable {
         case .microwaveBeep: return "Microwave is done"
         case .coughing: return "Coughing detected"
         case .sneezing: return "Sneezing detected"
-        case .crying: return "Crying detected"
+        case .crying: return "Possible cry for help detected"
+        case .shouting: return "Shouting detected — check nearby"
         case .kettleWhistling: return "Kettle is whistling"
         case .ovenTimer: return "Oven timer is beeping"
+        case .textNotification: return "New notification received"
         default: return "\(displayName) detected"
         }
     }
@@ -477,29 +509,42 @@ class SoundDetectionManager: NSObject, ObservableObject {
         for soundType in SoundType.allCases {
             switch soundType.urgencyLevel {
             case .critical:
-                confidenceBooster[soundType] = 1.5
+                confidenceBooster[soundType] = 1.8
             case .important:
-                confidenceBooster[soundType] = 1.25
+                confidenceBooster[soundType] = 1.35
             case .normal:
-                confidenceBooster[soundType] = 1.1
+                confidenceBooster[soundType] = 1.0
             }
         }
         
         confidenceBooster[.doorbell] = 2.0
-        confidenceBooster[.phoneRinging] = 2.0
-        confidenceBooster[.babyCrying] = 2.0
-        confidenceBooster[.smokeAlarm] = 3.0
-        confidenceBooster[.carbonMonoxide] = 3.0
+        confidenceBooster[.phoneRinging] = 2.2
+        confidenceBooster[.textNotification] = 2.1
+        confidenceBooster[.babyCrying] = 2.2
+        confidenceBooster[.crying] = 2.0
+        confidenceBooster[.shouting] = 1.9
+        confidenceBooster[.smokeAlarm] = 3.2
+        confidenceBooster[.carbonMonoxide] = 3.2
+        confidenceBooster[.ambulance] = 2.6
+        confidenceBooster[.fireTruck] = 2.6
+        confidenceBooster[.policeSiren] = 2.6
+        confidenceBooster[.scream] = 2.8
+        confidenceBooster[.glassBreaking] = 2.3
+        confidenceBooster[.carCrash] = 2.4
+        confidenceBooster[.gunshot] = 2.8
+        confidenceBooster[.explosion] = 2.8
         confidenceBooster[.dogBarking] = 1.8
         confidenceBooster[.alarmClock] = 1.8
-        confidenceBooster[.timerBeep] = 1.6
-        confidenceBooster[.microwaveBeep] = 1.6
+        confidenceBooster[.timerBeep] = 2.0
+        confidenceBooster[.microwaveBeep] = 2.1
+        confidenceBooster[.ovenTimer] = 2.0
         confidenceBooster[.doorKnock] = 1.7
-        confidenceBooster[.carHorn] = 1.5
+        confidenceBooster[.carHorn] = 1.9
+        confidenceBooster[.trainHorn] = 1.8
         confidenceBooster[.thunder] = 1.4
         confidenceBooster[.footsteps] = 1.3
-        confidenceBooster[.speech] = 1.2
-        confidenceBooster[.laughter] = 1.2
+        confidenceBooster[.speech] = 0.9
+        confidenceBooster[.laughter] = 0.85
         confidenceBooster[.coughing] = 1.4
         confidenceBooster[.sneezing] = 1.4
     }
@@ -640,7 +685,7 @@ class SoundDetectionManager: NSObject, ObservableObject {
         let detectionThreshold: Double = switch type.urgencyLevel {
         case .critical: 0.08
         case .important: 0.12
-        case .normal: 0.15
+        case .normal: 0.2
         }
         
         if trendAdjustedConfidence > detectionThreshold {
@@ -650,13 +695,16 @@ class SoundDetectionManager: NSObject, ObservableObject {
                 currentDetections.append((type: type, confidence: trendAdjustedConfidence))
             }
             
-            currentDetections.sort { $0.confidence > $1.confidence }
+            currentDetections.sort {
+                rankingScore(for: $0.type, confidence: $0.confidence) > rankingScore(for: $1.type, confidence: $1.confidence)
+            }
             
             if currentDetections.count > 10 {
                 currentDetections = Array(currentDetections.prefix(10))
             }
             
-            if let topDetection = currentDetections.first, topDetection.confidence > dominantConfidence {
+            if let topDetection = currentDetections.first,
+               rankingScore(for: topDetection.type, confidence: topDetection.confidence) >= rankingScore(for: dominantSound, confidence: dominantConfidence) {
                 dominantSound = topDetection.type
                 dominantConfidence = topDetection.confidence
             }
@@ -686,6 +734,17 @@ class SoundDetectionManager: NSObject, ObservableObject {
         }
         
         return 0.0
+    }
+
+    private func rankingScore(for type: SoundType?, confidence: Double) -> Double {
+        guard let type else { return confidence }
+        let urgencyWeight: Double = switch type.urgencyLevel {
+        case .critical: 0.4
+        case .important: 0.2
+        case .normal: 0.0
+        }
+        let priorityWeight = type.isPriorityAlert ? 0.18 : 0.0
+        return confidence + urgencyWeight + priorityWeight
     }
 }
 

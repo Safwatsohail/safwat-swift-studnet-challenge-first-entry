@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 class ASLImageLoader {
+    private static let supportedExtensions = ["jpg", "jpeg", "png", "gif"]
     
     /// Load ASL image from the available image folders
     static func loadImage(for imageName: String) -> UIImage? {
@@ -18,6 +19,10 @@ class ASLImageLoader {
         }
         
         let cleanName = imageName.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if let bundledImage = loadBundledImage(named: cleanName) {
+            return bundledImage
+        }
         
         // PRIORITY 1: Try to load from your ASL_Gestures folder structure first
         if let image = loadFromASLGesturesFolder(cleanName) {
@@ -54,6 +59,36 @@ class ASLImageLoader {
         }
         
         print("❌ Image not found: \(formattedName)")
+        return nil
+    }
+    
+    static func hasImage(for imageName: String) -> Bool {
+        loadImage(for: imageName) != nil
+    }
+    
+    static func loadBundledImage(named name: String) -> UIImage? {
+        let cleanName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanName.isEmpty else { return nil }
+        
+        if let directImage = UIImage(named: cleanName) {
+            return directImage
+        }
+        
+        let candidates = resourceCandidates(for: cleanName)
+        for candidate in candidates {
+            for ext in supportedExtensions {
+                if let path = Bundle.main.path(forResource: candidate, ofType: ext),
+                   let image = UIImage(contentsOfFile: path) {
+                    return image
+                }
+            }
+            
+            if let path = Bundle.main.path(forResource: candidate, ofType: nil),
+               let image = UIImage(contentsOfFile: path) {
+                return image
+            }
+        }
+        
         return nil
     }
     
@@ -122,6 +157,41 @@ class ASLImageLoader {
         }
         
         return nil
+    }
+    
+    private static func resourceCandidates(for name: String) -> [String] {
+        let upperName = name.uppercased()
+        let normalized = upperName.replacingOccurrences(of: " ", with: "_")
+        let wordCase = name
+            .lowercased()
+            .split(separator: " ")
+            .enumerated()
+            .map { index, part in
+                index == 0 ? String(part).capitalized : String(part).lowercased()
+            }
+            .joined(separator: "_")
+        var candidates = [name, upperName, normalized]
+        
+        if upperName.count == 1 && upperName.isLetter {
+            candidates.append(contentsOf: [
+                "ASL_Gestures/Alphabets/\(upperName)",
+                "Letter_\(upperName)"
+            ])
+        } else if upperName == "10" || (upperName.count == 1 && upperName.isNumber) {
+            candidates.append(contentsOf: [
+                "ASL_Gestures/Numbers/\(upperName)",
+                "Number_\(upperName)"
+            ])
+        } else {
+            candidates.append(contentsOf: [
+                "ASL_\(normalized)",
+                "Word_\(normalized.capitalized.replacingOccurrences(of: "_", with: "_"))",
+                "Word_\(name.capitalized.replacingOccurrences(of: " ", with: "_"))",
+                "Word_\(wordCase)"
+            ])
+        }
+        
+        return Array(NSOrderedSet(array: candidates)) as? [String] ?? candidates
     }
     
     /// Create a fallback placeholder image with the character

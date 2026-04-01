@@ -21,6 +21,10 @@ class ASLCameraManager: NSObject, ObservableObject {
     private let captureSession = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
     private let sessionQueue = DispatchQueue(label: "camera.session.queue")
+    private let ciContext = CIContext()
+    private var isSessionConfigured = false
+    private var shouldStartWhenConfigured = false
+    private var publishedFrameCount = 0
     
     // Track device orientation for proper camera setup
     @Published var currentOrientation: AVCaptureVideoOrientation = .portrait
@@ -118,7 +122,7 @@ class ASLCameraManager: NSObject, ObservableObject {
     // IMPROVED: Prediction smoothing with timing control
     private var predictionHistory: [String] = []
     private let historySize = 12  // Increased for better stability
-    private let minConfidenceThreshold: Float = 0.45  // Slightly higher for better accuracy
+    private let minConfidenceThreshold: Float = 0.38  // More tolerant so letters like S still surface
     
     // IMPROVED: Lock predictions when hand is detected with timing control
     @Published var lockedPredictions: [(gesture: String, confidence: Float)] = []
@@ -130,7 +134,7 @@ class ASLCameraManager: NSObject, ObservableObject {
     private var lastGestureTime: Date = Date()
     private let gestureInterval: TimeInterval = 1.5  // 1.5 seconds between gestures
     private var gestureStabilityFrames = 0
-    private let requiredStabilityFrames = 20  // ~0.7 seconds at 30fps for stability
+    private let requiredStabilityFrames = 14  // Faster lock without waiting too long
     
     // Function to lock in current gesture
     func selectCurrentGesture() {
@@ -219,19 +223,27 @@ class ASLCameraManager: NSObject, ObservableObject {
     }
     
     private func setupCamera() {
-        
         sessionQueue.async { [weak self] in
             self?.configureCaptureSession()
         }
     }
     
     private func configureCaptureSession() {
-        guard !captureSession.isRunning else { return }
+        guard !isSessionConfigured else { return }
         
         captureSession.beginConfiguration()
         
+        for input in captureSession.inputs {
+            captureSession.removeInput(input)
+        }
+        for output in captureSession.outputs {
+            captureSession.removeOutput(output)
+        }
+        
         // Configure session preset
-        if captureSession.canSetSessionPreset(.medium) {
+        if captureSession.canSetSessionPreset(.high) {
+            captureSession.sessionPreset = .high
+        } else if captureSession.canSetSessionPreset(.medium) {
             captureSession.sessionPreset = .medium
         }
         
@@ -248,6 +260,7 @@ class ASLCameraManager: NSObject, ObservableObject {
         
         // Configure video output
         videoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
+        videoOutput.alwaysDiscardsLateVideoFrames = true
         videoOutput.videoSettings = [
             kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA
         ]
@@ -268,9 +281,15 @@ class ASLCameraManager: NSObject, ObservableObject {
         }
         
         captureSession.commitConfiguration()
+        isSessionConfigured = true
         
         DispatchQueue.main.async {
             self.isRunning = false
+        }
+        
+        if shouldStartWhenConfigured {
+            shouldStartWhenConfigured = false
+            startSession()
         }
         
     }
@@ -278,12 +297,21 @@ class ASLCameraManager: NSObject, ObservableObject {
     // MARK: - Session Control
     func startSession() {
         guard permissionGranted else {
+            shouldStartWhenConfigured = true
             requestCameraPermission()
             return
         }
         
         sessionQueue.async { [weak self] in
-            guard let self = self, !self.captureSession.isRunning else { return }
+            guard let self = self else { return }
+            
+            if !self.isSessionConfigured {
+                self.shouldStartWhenConfigured = true
+                self.configureCaptureSession()
+                return
+            }
+            
+            guard !self.captureSession.isRunning else { return }
             
             self.captureSession.startRunning()
             
@@ -315,6 +343,7 @@ class ASLCameraManager: NSObject, ObservableObject {
                 self.handLandmarks = nil
                 self.predictionHistory.removeAll()
                 self.landmarkHistory.removeAll()
+                self.currentFrame = nil
             }
         }
     }
@@ -329,11 +358,13 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
-        let context = CIContext()
         
-        if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
-            DispatchQueue.main.async {
-                self.currentFrame = cgImage
+        if let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent) {
+            publishedFrameCount += 1
+            if publishedFrameCount.isMultiple(of: 2) {
+                DispatchQueue.main.async {
+                    self.currentFrame = cgImage
+                }
             }
         }
         

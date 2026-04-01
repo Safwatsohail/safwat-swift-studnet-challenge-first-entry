@@ -8,6 +8,10 @@ struct SoundDetectionView: View {
     @State private var showHistory = false
     @Environment(\.dismiss) private var dismiss
     
+    private var visibleDetections: ArraySlice<(type: SoundType, confidence: Double)> {
+        manager.currentDetections.prefix(5)
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -251,15 +255,20 @@ struct SoundDetectionView: View {
     // MARK: - Detections Bar
     private var detectionsBar: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Active Signals")
-                .font(.system(size: 13, weight: .semibold, design: .rounded))
-                .foregroundColor(DS.Colors.textSecondary)
-                .padding(.horizontal, 20)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Priority Signals")
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .foregroundColor(DS.Colors.textSecondary)
+                Text("Showing the strongest alert plus four lower-confidence matches.")
+                    .font(.system(size: 11, weight: .medium, design: .rounded))
+                    .foregroundColor(DS.Colors.textTertiary)
+            }
+            .padding(.horizontal, 20)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(manager.currentDetections.prefix(8), id: \.type.rawValue) { detection in
-                        soundChip(detection.type, confidence: detection.1)
+                    ForEach(Array(visibleDetections.enumerated()), id: \.element.type.rawValue) { index, detection in
+                        soundChip(detection.type, confidence: detection.1, isPrimary: index == 0)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -267,28 +276,30 @@ struct SoundDetectionView: View {
         }
     }
     
-    private func soundChip(_ type: SoundType, confidence: Double) -> some View {
+    private func soundChip(_ type: SoundType, confidence: Double, isPrimary: Bool) -> some View {
         VStack(spacing: 4) {
             Text(type.emoji)
-                .font(.system(size: 22))
+                .font(.system(size: isPrimary ? 24 : 20))
             Text(type.displayName)
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
-                .foregroundColor(.white.opacity(0.8))
+                .foregroundColor(.white.opacity(isPrimary ? 0.9 : 0.58))
                 .lineLimit(1)
             Text("\(Int(confidence * 100))%")
                 .font(.system(size: 9, weight: .bold, design: .rounded))
-                .foregroundColor(soundColor(for: type.urgencyLevel))
+                .foregroundColor(soundColor(for: type.urgencyLevel).opacity(isPrimary ? 1 : 0.6))
         }
-        .frame(width: 70)
+        .frame(width: isPrimary ? 78 : 68)
         .padding(.vertical, 10)
+        .opacity(isPrimary ? 1 : 0.7)
         .background(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(DS.Colors.cardBackground.opacity(0.8))
+                .fill(DS.Colors.cardBackground.opacity(isPrimary ? 0.86 : 0.58))
                 .overlay(
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(soundColor(for: type.urgencyLevel).opacity(0.3), lineWidth: 1)
+                        .stroke(soundColor(for: type.urgencyLevel).opacity(isPrimary ? 0.38 : 0.16), lineWidth: 1)
                 )
         )
+        .shadow(color: soundColor(for: type.urgencyLevel).opacity(isPrimary ? 0.15 : 0.04), radius: isPrimary ? 10 : 4, x: 0, y: 4)
     }
     
     // MARK: - Event History

@@ -30,10 +30,16 @@ struct ASLSignImageView: View {
                 
                 if sign.isLocal {
                     // Load local bundled image
-                    Image(sign.imageUrl)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: size * 0.85, height: size * 0.85)
+                    if let image = ASLImageLoader.loadImage(for: sign.imageUrl) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: size * 0.85, height: size * 0.85)
+                    } else {
+                        Text(sign.character)
+                            .font(.system(size: size * 0.4, weight: .bold, design: .rounded))
+                            .foregroundColor(DS.Colors.textSecondary)
+                    }
                 } else if loadError {
                     // Error state - show letter/word as text
                     Text(sign.character)

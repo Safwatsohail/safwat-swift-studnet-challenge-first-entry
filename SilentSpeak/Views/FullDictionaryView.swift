@@ -251,8 +251,8 @@ struct SignCard: View {
     
     @ViewBuilder
     private var signImage: some View {
-        if let assetName = entry.imageAssetName, UIImage(named: assetName) != nil {
-            Image(assetName)
+        if let assetName = entry.imageAssetName, let image = ASLImageLoader.loadImage(for: assetName) {
+            Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } else if let urlStr = entry.lifeprintURL, let url = URL(string: urlStr) {
@@ -261,15 +261,15 @@ struct SignCard: View {
                 case .success(let img):
                     img.resizable().aspectRatio(contentMode: .fit)
                 case .failure:
-                    placeholderView
+                    fallbackStrip
                 case .empty:
                     ProgressView().scaleEffect(0.7)
                 @unknown default:
-                    placeholderView
+                    fallbackStrip
                 }
             }
         } else {
-            placeholderView
+            fallbackStrip
         }
     }
     
@@ -282,6 +282,17 @@ struct SignCard: View {
                 Image(systemName: "hand.raised.fill")
                     .font(.system(size: 16))
                     .foregroundColor(DS.Colors.accent.opacity(0.4))
+            }
+        }
+    }
+    
+    private var fallbackStrip: some View {
+        VStack(spacing: 8) {
+            ASLFingerspellingStrip(text: entry.word, cardSize: 34)
+            if entry.word.count > 1 {
+                Text("Fingerspelling fallback")
+                    .font(.system(size: 10, weight: .medium, design: .rounded))
+                    .foregroundColor(DS.Colors.textTertiary)
             }
         }
     }
@@ -377,8 +388,8 @@ struct SignDetailSheet: View {
     
     @ViewBuilder
     private var signImage: some View {
-        if let assetName = entry.imageAssetName, UIImage(named: assetName) != nil {
-            Image(assetName)
+        if let assetName = entry.imageAssetName, let image = ASLImageLoader.loadImage(for: assetName) {
+            Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } else if let urlStr = entry.lifeprintURL, let url = URL(string: urlStr) {
@@ -387,15 +398,15 @@ struct SignDetailSheet: View {
                 case .success(let img):
                     img.resizable().aspectRatio(contentMode: .fit)
                 case .failure:
-                    placeholderLarge
+                    fallbackLarge
                 case .empty:
                     ProgressView()
                 @unknown default:
-                    placeholderLarge
+                    fallbackLarge
                 }
             }
         } else {
-            placeholderLarge
+            fallbackLarge
         }
     }
     
@@ -407,6 +418,36 @@ struct SignDetailSheet: View {
             Text("No image available")
                 .font(.system(size: 12))
                 .foregroundColor(DS.Colors.textTertiary)
+        }
+    }
+    
+    private var fallbackLarge: some View {
+        VStack(spacing: 16) {
+            ASLFingerspellingStrip(text: entry.word, cardSize: 56)
+            Text("Showing bundled fingerspelling reference")
+                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .foregroundColor(DS.Colors.textTertiary)
+        }
+        .padding(.horizontal, 12)
+    }
+}
+
+struct ASLFingerspellingStrip: View {
+    let text: String
+    var cardSize: CGFloat = 40
+    
+    private var signs: [ASLSignImage] {
+        ASLTextConverter.convertToASL(text)
+    }
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: max(6, cardSize * 0.18)) {
+                ForEach(signs) { sign in
+                    ImprovedWordHandCard(sign: sign, accentColor: DS.Colors.accent, waveColor: DS.Colors.accentLight, cardSize: cardSize)
+                }
+            }
+            .padding(.horizontal, 8)
         }
     }
 }

@@ -1,30 +1,5 @@
 import SwiftUI
 
-// MARK: - Animated Press Button Style
-struct AnimatedPressStyle: ButtonStyle {
-    var scaleAmount: CGFloat = 0.95
-    var glowColor: Color = Color(red: 0.82, green: 0.53, blue: 0.43)
-    var enableHaptic: Bool = true
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? scaleAmount : 1.0)
-            .brightness(configuration.isPressed ? 0.05 : 0)
-            .shadow(
-                color: configuration.isPressed ? glowColor.opacity(0.6) : glowColor.opacity(0),
-                radius: configuration.isPressed ? 20 : 0,
-                x: 0,
-                y: configuration.isPressed ? 8 : 0
-            )
-            .animation(.spring(response: 0.25, dampingFraction: 0.6), value: configuration.isPressed)
-            .onChange(of: configuration.isPressed) { pressed in
-                if pressed && enableHaptic {
-                    let impact = UIImpactFeedbackGenerator(style: .medium)
-                    impact.impactOccurred()
-                }
-            }
-    }
-}
 
 // MARK: - Glow Button Style
 struct GlowButtonStyle: ButtonStyle {

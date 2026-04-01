@@ -235,7 +235,7 @@ class MediaPipeGestureClassifier {
             
             // 2. Curve quality analysis (moderate curl, not too tight, not too loose)
             if avgCurl > 0.25 && avgCurl < 0.75 {
-                curveQualityScore = 1.0 - abs(avgCurl - 0.50) / 0.25  // Peak at 0.5 curl
+                curveQualityScore = CGFloat(1.0 - abs(avgCurl - 0.50) / 0.25)  // Peak at 0.5 curl
             } else if avgCurl > 0.15 && avgCurl < 0.85 {
                 curveQualityScore = 0.7
             } else if avgCurl > 0.10 && avgCurl < 0.90 {
@@ -3408,14 +3408,14 @@ class MediaPipeGestureClassifier {
         
         results = uniqueResults
         
-        // Return top 5 (not just 3) for more options
-        while results.count < 5 {
+        // Return top 8 for a richer retry/options panel
+        while results.count < 8 {
             results.append(("?", 0.05))
         }
         
-        print("📋 Final predictions (no duplicates): \(results.prefix(5).map { "\($0.0)(\(Int($0.1 * 100))%)" }.joined(separator: ", "))")
+        print("📋 Final predictions (no duplicates): \(results.prefix(8).map { "\($0.0)(\(Int($0.1 * 100))%)" }.joined(separator: ", "))")
         
-        return Array(results.prefix(5)).map { (gesture: $0.0, confidence: $0.1) }
+        return Array(results.prefix(8)).map { (gesture: $0.0, confidence: $0.1) }
     }
     
     // MARK: - Helper Functions
@@ -3541,30 +3541,13 @@ class MediaPipeGestureClassifier {
             
             // If tips are closer than PIPs, likely crossing
             if tipToPipRatio < 0.8 {
-                return min(1.0, (0.8 - tipToPipRatio) * 2.5)
+                return Float(min(1.0, (0.8 - tipToPipRatio) * 2.5))
             }
         }
         
         return 0.0
     }
     
-    /// Check if finger is pointing (straight and extended)
-    private static func isFingerPointing(tip: CGPoint, dip: CGPoint, pip: CGPoint, mcp: CGPoint) -> Bool {
-        // Check if finger is straight (tip, dip, pip roughly aligned)
-        let tipToDip = distance(tip, dip)
-        let dipToPip = distance(dip, pip)
-        let pipToMcp = distance(pip, mcp)
-        
-        // Check extension (tip should be furthest from MCP)
-        let tipToMcp = distance(tip, mcp)
-        let extended = tipToMcp > pipToMcp * 1.5
-        
-        // Check straightness (segments should be roughly equal)
-        let segmentRatio = tipToDip / max(dipToPip, 0.001)
-        let straight = segmentRatio > 0.7 && segmentRatio < 1.4
-        
-        return extended && straight
-    }
     
     // MARK: - Motion Detection
     

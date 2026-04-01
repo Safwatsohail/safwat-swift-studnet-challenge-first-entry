@@ -123,6 +123,8 @@ struct TutorialOnboardingView: View {
                     .padding(.horizontal, 20)
                     .opacity(animateContent ? 1.0 : 0.0)
                     .animation(.easeInOut(duration: 0.6).delay(0.5), value: animateContent)
+                
+                tutorialFeatureHighlights
             }
             .padding(.horizontal, 30)
             
@@ -254,18 +256,26 @@ struct TutorialOnboardingView: View {
                     
                     // Hand shape image placeholder
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white.opacity(0.9))
-                        .frame(width: 200, height: 200)
+                        .fill(Color.white.opacity(0.92))
+                        .frame(width: 220, height: 220)
                         .overlay(
                             VStack(spacing: 12) {
-                                Image(systemName: "hand.raised.fill")
-                                    .font(.system(size: 60))
-                                    .foregroundColor(Color(red: 0.3, green: 0.7, blue: 0.45))
+                                if let image = ASLImageLoader.loadImage(for: tutorialLetters[currentLetter]) {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 170, height: 170)
+                                } else {
+                                    Image(systemName: "hand.raised.fill")
+                                        .font(.system(size: 60))
+                                        .foregroundColor(Color(red: 0.3, green: 0.7, blue: 0.45))
+                                }
                                 
                                 Text("Letter \(tutorialLetters[currentLetter])")
                                     .font(.system(size: 18, weight: .semibold, design: .rounded))
                                     .foregroundColor(Color(red: 0.2, green: 0.15, blue: 0.12))
                             }
+                            .padding(.vertical, 10)
                         )
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
                     
@@ -276,6 +286,8 @@ struct TutorialOnboardingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
                         .lineLimit(nil)
+                    
+                    tutorialControlGuide
                     
                     // IMPORTANT: Timing and retry instructions
                     VStack(spacing: 12) {
@@ -447,6 +459,56 @@ struct TutorialOnboardingView: View {
         utterance.pitchMultiplier = 1.1
         
         speechSynthesizer.speak(utterance)
+    }
+    
+    private var tutorialFeatureHighlights: some View {
+        VStack(spacing: 10) {
+            highlightRow(icon: "camera.viewfinder", title: "Camera panel", detail: "Keep your hand inside the live frame and watch the confidence chip.")
+            highlightRow(icon: "sparkles.rectangle.stack", title: "Prediction row", detail: "Tap any prediction, not just the first one, then use Retry if needed.")
+            highlightRow(icon: "text.badge.plus", title: "Sentence builder", detail: "Use Add, suggestions, and Send & Speak to turn letters into a full message.")
+        }
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(Color.white.opacity(0.65))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(Color.white.opacity(0.45), lineWidth: 1)
+                )
+        )
+    }
+    
+    private var tutorialControlGuide: some View {
+        VStack(spacing: 10) {
+            highlightRow(icon: "arrow.counterclockwise.circle.fill", title: "Retry button", detail: "Resets the hand detector so you can sign the same letter again.")
+            highlightRow(icon: "speaker.wave.3.fill", title: "Speak Aloud", detail: "Reads the built sentence to the hearing person once you finish signing.")
+            highlightRow(icon: "mic.circle.fill", title: "Speaker side", detail: "The microphone turns speech into text and matching ASL cards on the other panel.")
+        }
+        .padding(.horizontal, 20)
+    }
+    
+    private func highlightRow(icon: String, title: String, detail: String) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(Color.white.opacity(0.95))
+                    .frame(width: 34, height: 34)
+                Image(systemName: icon)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(Color(red: 0.82, green: 0.53, blue: 0.43))
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(red: 0.2, green: 0.15, blue: 0.12))
+                Text(detail)
+                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .foregroundColor(Color(red: 0.45, green: 0.38, blue: 0.34))
+            }
+            
+            Spacer()
+        }
     }
 }
 

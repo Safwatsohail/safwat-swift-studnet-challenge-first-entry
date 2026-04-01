@@ -20,6 +20,7 @@ struct ConversationView: View {
     @State private var showingHelp = false
     @State private var showingDictionary = false
     @State private var showingTutorial = false
+    @State private var lastCommittedTranscript = ""
     
     // Shared speech synthesizer
     @State private var speechSynthesizer = AVSpeechSynthesizer()
@@ -34,132 +35,74 @@ struct ConversationView: View {
     private let accent = Color(red: 0.78, green: 0.48, blue: 0.32)
     private let wave = Color(red: 0.85, green: 0.65, blue: 0.45)
     
+    private var composedSentence: String {
+        let parts = [aslManager.currentSentence, aslManager.currentWord]
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        return parts.joined(separator: " ")
+    }
+    
     var body: some View {
-        ZStack {
-            // Professional background
-            LinearGradient(
-                colors: [bg1, bg2],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
+        GeometryReader { geometry in
+            let isSmallPhone = geometry.size.width < 700 && geometry.size.height < 950
+            let shouldForceLandscape = isSmallPhone && geometry.size.height > geometry.size.width
+            let usesCompactTranslator = geometry.size.width < 760
             
-            VStack(spacing: 0) {
-                // Header
-                HStack {
-                    Button("Back") { 
-                        HapticManager.shared.lightImpact()
-                        dismiss() 
-                    }
-                    .foregroundColor(accent)
-                    
-                    Spacer()
-                    
-                    Text("SilentSpeak")
-                        .font(.headline)
-                        .foregroundColor(accent)
-                    
-                    Spacer()
-                    
-                    // Help button
-                    Button(action: {
-                        HapticManager.shared.lightImpact()
-                        showingHelp = true
-                    }) {
-                        Image(systemName: "questionmark.circle.fill")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(accent)
-                    }
-                    
-                    // Assist mode toggle
-                    Button(action: {
-                        HapticManager.shared.mediumImpact()
-                        // Toggle assist mode functionality
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-                            // This could toggle between different assist levels
-                            // For now, it switches the active panel
-                            switch activePanel {
-                            case .deaf: activePanel = .hearing
-                            case .hearing: activePanel = .deaf
-                            }
-                        }
-                    }) {
-                        Image(systemName: "arrow.left.arrow.right.circle.fill")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(accent)
-                    }
-                    
-                    Text("Mode: \(activePanelLabel)")
-                        .font(.caption)
-                        .foregroundColor(accent)
-                }
-                .padding()
+            ZStack {
+                LinearGradient(
+                    colors: [bg1, bg2],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
                 
-                // Main content - Both panels visible with active/inactive states
-                VStack(spacing: 8) {
-                    HStack(spacing: 8) {
-                        // Deaf panel
-                        VStack {
-                            // Camera view
-                            cameraView
-                            
-                            // Top-5 Predictions panel (top-5 + retry)
-                            if aslManager.isHandPresent {
-                                predictionsPanel
-                                    .transition(.asymmetric(
-                                        insertion: .scale(scale: 0.92).combined(with: .opacity),
-                                        removal: .opacity
-                                    ))
+                VStack(spacing: 0) {
+                    headerView(isSmallPhone: isSmallPhone)
+                    
+                    if shouldForceLandscape {
+                        rotateToLandscapePrompt
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 24)
+                    } else {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            VStack(spacing: 8) {
+                                Group {
+                                    if usesCompactTranslator {
+                                        VStack(spacing: 8) {
+                                            deafPanel
+                                            hearingPanelCard
+                                        }
+                                    } else {
+                                        HStack(spacing: 8) {
+                                            deafPanel
+                                            hearingPanelCard
+                                        }
+                                    }
+                                }
+                                .frame(maxWidth: .infinity, alignment: .top)
+                                
+                                if !isSmallPhone {
+                                    messageHistoryBox
+                                        .frame(height: min(108, geometry.size.height * 0.14))
+                                }
                             }
-                            
-                            // Word-being-built bar
-                            if !aslManager.currentWord.isEmpty {
-                                wordBuilderBar
-                                    .transition(.move(edge: .bottom).combined(with: .opacity))
-                            }
-                            
-                            // Signed words hand-image strip
-                            signedWordsStrip
+                            .padding(.horizontal, isSmallPhone ? 6 : 8)
+                            .padding(.bottom, 10)
                         }
-                        .frame(maxWidth: .infinity)
-                        .opacity(activePanel == .deaf ? 1.0 : 0.4)
-                        .scaleEffect(activePanel == .deaf ? 1.0 : 0.95)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .stroke(activePanel == .deaf ? accent : Color.clear, lineWidth: 2)
-                                .shadow(color: activePanel == .deaf ? accent.opacity(0.3) : Color.clear, radius: 8)
-                        )
-                        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: activePanel)
                         
-                        // Hearing panel
-                        hearingPanel
-                            .frame(maxWidth: .infinity)
-                            .opacity(activePanel == .hearing ? 1.0 : 0.4)
-                            .scaleEffect(activePanel == .hearing ? 1.0 : 0.95)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .stroke(activePanel == .hearing ? accent : Color.clear, lineWidth: 2)
-                                    .shadow(color: activePanel == .hearing ? accent.opacity(0.3) : Color.clear, radius: 8)
-                            )
-                            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: activePanel)
+                        bottomBar
                     }
-                    .frame(minHeight: 300)
-                    
-                    // Message history box
-                    messageHistoryBox
-                        .frame(height: min(120, UIScreen.main.bounds.height * 0.15))
                 }
-                .padding(.horizontal, 8)
-                
-                // Bottom bar
-                bottomBar
             }
         }
         .onAppear {
             aslManager.requestCameraPermission()
             aslManager.startSession()
+            refreshWordSuggestions()
         }
         .onDisappear {
+            finalizeSpeechTranscriptIfNeeded()
             recognizer.stopTranscribing()
             aslManager.stopSession()
         }
@@ -168,6 +111,19 @@ struct ConversationView: View {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                     micPulse = true
                 }
+            }
+        }
+        .onChange(of: aslManager.currentWord) { _ in
+            refreshWordSuggestions()
+            syncASLSigns()
+        }
+        .onChange(of: aslManager.currentSentence) { _ in
+            refreshWordSuggestions()
+            syncASLSigns()
+        }
+        .onChange(of: recognizer.isListening) { isListening in
+            if !isListening {
+                finalizeSpeechTranscriptIfNeeded()
             }
         }
         .sheet(isPresented: $showingHelp) {
@@ -196,6 +152,86 @@ struct ConversationView: View {
         }
     }
     
+    private func headerView(isSmallPhone: Bool) -> some View {
+        HStack(spacing: isSmallPhone ? 10 : 14) {
+            Button("Back") {
+                HapticManager.shared.lightImpact()
+                dismiss()
+            }
+            .foregroundColor(accent)
+            
+            Spacer()
+            
+            Text("SilentSpeak")
+                .font(isSmallPhone ? .subheadline.weight(.semibold) : .headline)
+                .foregroundColor(accent)
+            
+            Spacer()
+            
+            Button(action: {
+                HapticManager.shared.lightImpact()
+                showingHelp = true
+            }) {
+                Image(systemName: "questionmark.circle.fill")
+                    .font(.system(size: isSmallPhone ? 18 : 20, weight: .medium))
+                    .foregroundColor(accent)
+            }
+            
+            Button(action: {
+                HapticManager.shared.mediumImpact()
+                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                    switch activePanel {
+                    case .deaf: activePanel = .hearing
+                    case .hearing: activePanel = .deaf
+                    }
+                }
+            }) {
+                Image(systemName: "arrow.left.arrow.right.circle.fill")
+                    .font(.system(size: isSmallPhone ? 18 : 20, weight: .medium))
+                    .foregroundColor(accent)
+            }
+        }
+        .padding(.horizontal, isSmallPhone ? 14 : 16)
+        .padding(.vertical, isSmallPhone ? 10 : 14)
+    }
+    
+    private var rotateToLandscapePrompt: some View {
+        VStack(spacing: 18) {
+            Spacer()
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(Color.white.opacity(0.72))
+                    .frame(width: 170, height: 120)
+                    .shadow(color: accent.opacity(0.15), radius: 18, x: 0, y: 10)
+                
+                Image(systemName: "iphone.landscape")
+                    .font(.system(size: 48, weight: .medium))
+                    .foregroundColor(accent)
+            }
+            
+            Text("Rotate Your iPhone")
+                .font(.system(size: 26, weight: .bold, design: .rounded))
+                .foregroundColor(DS.Colors.textPrimary)
+            
+            Text("Use the translator in landscape on smaller screens so the camera, transcript, and send controls all fit properly.")
+                .font(.system(size: 15, weight: .medium, design: .rounded))
+                .foregroundColor(DS.Colors.textSecondary)
+                .multilineTextAlignment(.center)
+                .lineSpacing(4)
+                .padding(.horizontal, 10)
+            
+            HStack(spacing: 10) {
+                Label("Landscape only", systemImage: "arrow.triangle.2.circlepath")
+                Label("Camera fits", systemImage: "camera.viewfinder")
+            }
+            .font(.system(size: 12, weight: .semibold, design: .rounded))
+            .foregroundColor(accent)
+            
+            Spacer()
+        }
+    }
+    
     // MARK: Camera View
     private var cameraView: some View {
         ZStack {
@@ -206,6 +242,18 @@ struct ConversationView: View {
             if aslManager.permissionGranted && aslManager.isRunning {
                 ASLCameraPreview(cameraManager: aslManager)
                     .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+            }
+            
+            if let frame = aslManager.currentFrame {
+                Image(decorative: frame, scale: 1.0)
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    .opacity(aslManager.isRunning ? 0.96 : 0.58)
+                    .allowsHitTesting(false)
+            }
+            
+            if aslManager.permissionGranted && aslManager.isRunning {
                 
                 // Scanning animation border
                 RoundedRectangle(cornerRadius: 22, style: .continuous)
@@ -220,6 +268,18 @@ struct ConversationView: View {
                 
                 // Gesture chip overlay at bottom of camera
                 VStack {
+                    HStack {
+                        Label(aslManager.currentFrame == nil ? "Waiting for live feed" : "Live camera", systemImage: aslManager.currentFrame == nil ? "camera.metering.unknown" : "dot.radiowaves.left.and.right")
+                            .font(.system(size: 11, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white.opacity(0.9))
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
+                            .background(.ultraThinMaterial, in: Capsule())
+                        Spacer()
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+                    
                     Spacer()
                     if !aslManager.currentGesture.isEmpty && aslManager.isHandPresent {
                         HStack(spacing: 8) {
@@ -250,6 +310,7 @@ struct ConversationView: View {
                 cameraPlaceholder
             }
         }
+        .frame(minHeight: 220)
     }
     
     private var cameraPlaceholder: some View {
@@ -278,7 +339,7 @@ struct ConversationView: View {
     
     // MARK: Predictions Panel (top-5 + retry)
     private var predictionsPanel: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Image(systemName: "sparkles")
                     .font(.system(size: 12, weight: .semibold))
@@ -295,6 +356,7 @@ struct ConversationView: View {
                     HapticManager.shared.mediumImpact()
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
                         aslManager.clearSelection()
+                        refreshWordSuggestions()
                     }
                 }) {
                     HStack(spacing: 4) {
@@ -310,18 +372,18 @@ struct ConversationView: View {
                 }
                 .buttonStyle(BouncyPressStyle())
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 10)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(Array(aslManager.lockedPredictions.prefix(5).enumerated()), id: \.offset) { idx, pred in
+                HStack(spacing: 6) {
+                    ForEach(Array(aslManager.lockedPredictions.filter { $0.gesture != "?" }.prefix(8).enumerated()), id: \.offset) { idx, pred in
                         predictionChip(pred, rank: idx)
                     }
                 }
-                .padding(.horizontal, 12)
+                .padding(.horizontal, 10)
             }
         }
-        .padding(.vertical, 10)
+        .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .fill(.ultraThinMaterial)
@@ -345,7 +407,7 @@ struct ConversationView: View {
                 predictionPop = false 
             }
         }) {
-            VStack(spacing: 4) {
+            VStack(spacing: 3) {
                 // Rank badge
                 ZStack {
                     Circle()
@@ -357,7 +419,7 @@ struct ConversationView: View {
                 }
                 
                 Text(pred.gesture)
-                    .font(.system(size: 20, weight: .black, design: .rounded))
+                    .font(.system(size: 18, weight: .black, design: .rounded))
                     .foregroundColor(isTop ? accent : Color(red: 0.4, green: 0.28, blue: 0.2))
                     .minimumScaleFactor(0.6)
                     .lineLimit(1)
@@ -380,9 +442,9 @@ struct ConversationView: View {
                 }
                 .frame(height: 4)
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 10)
-            .frame(minWidth: 72)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .frame(minWidth: 64)
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .fill(isTop ? accent.opacity(0.12) : Color.white.opacity(0.55))
@@ -398,13 +460,13 @@ struct ConversationView: View {
     
     // MARK: Word Builder Bar
     private var wordBuilderBar: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 8) {
             Image(systemName: "pencil.tip")
                 .font(.system(size: 13))
                 .foregroundColor(accent)
             
             Text(aslManager.currentWord)
-                .font(.system(size: 16, weight: .black, design: .rounded))
+                .font(.system(size: 15, weight: .black, design: .rounded))
                 .foregroundColor(accent)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
@@ -417,6 +479,7 @@ struct ConversationView: View {
                 HapticManager.shared.lightImpact()
                 if !aslManager.currentWord.isEmpty { 
                     aslManager.currentWord.removeLast() 
+                    refreshWordSuggestions()
                 } 
             }) {
                 Image(systemName: "delete.left.fill")
@@ -445,8 +508,8 @@ struct ConversationView: View {
             }
             .buttonStyle(BouncyPressStyle())
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 9)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(Color.white.opacity(0.7))
@@ -454,10 +517,60 @@ struct ConversationView: View {
         )
     }
     
+    private var sentenceAssistBar: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Image(systemName: "wand.and.stars")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(accent)
+                Text(aslManager.currentWord.isEmpty ? "Next-word ideas" : "Finish this word")
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .foregroundColor(accent)
+                Spacer()
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(aslManager.wordSuggestions, id: \.self) { suggestion in
+                        Button(action: {
+                            HapticManager.shared.selection()
+                            applySuggestion(suggestion)
+                        }) {
+                            Text(suggestion)
+                                .font(.system(size: 12, weight: .bold, design: .rounded))
+                                .foregroundColor(accent)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 7)
+                                .background(
+                                    Capsule()
+                                        .fill(Color.white.opacity(0.75))
+                                        .overlay(
+                                            Capsule()
+                                                .stroke(accent.opacity(0.22), lineWidth: 1)
+                                        )
+                                )
+                        }
+                        .buttonStyle(BouncyPressStyle())
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.white.opacity(0.62))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(wave.opacity(0.2), lineWidth: 1)
+                )
+        )
+    }
+    
     // MARK: Signed Words Strip
     private var signedWordsStrip: some View {
         VStack(spacing: 6) {
-            if aslSigns.isEmpty {
+            if aslSigns.isEmpty && composedSentence.isEmpty {
                 HStack {
                     Spacer()
                     VStack(spacing: 6) {
@@ -472,7 +585,7 @@ struct ConversationView: View {
                     }
                     Spacer()
                 }
-                .frame(height: 95)
+                .frame(height: 84)
                 .background(
                     RoundedRectangle(cornerRadius: 18, style: .continuous)
                         .fill(Color.white.opacity(0.5))
@@ -482,12 +595,12 @@ struct ConversationView: View {
                         )
                 )
             } else {
-                VStack(spacing: 8) {
+                VStack(spacing: 6) {
                     // Audio play button for sentence
                     HStack {
                         Button(action: {
                             HapticManager.shared.mediumImpact()
-                            speakText(aslManager.currentSentence)
+                            speakText(composedSentence)
                         }) {
                             HStack(spacing: 8) {
                                 ZStack {
@@ -512,8 +625,8 @@ struct ConversationView: View {
                                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                                     .foregroundColor(accent)
                             }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
                             .background(
                                 Capsule()
                                     .fill(.ultraThinMaterial)
@@ -524,74 +637,13 @@ struct ConversationView: View {
                             )
                         }
                         .buttonStyle(BouncyPressStyle())
-                        
-                        Spacer()
-                        
-                        // Ascend button (capitalize first letter of each word)
-                        Button(action: {
-                            HapticManager.shared.lightImpact()
-                            aslManager.currentSentence = aslManager.currentSentence
-                                .split(separator: " ")
-                                .map { $0.capitalized }
-                                .joined(separator: " ")
-                        }) {
-                            HStack(spacing: 6) {
-                                Image(systemName: "textformat.abc")
-                                    .font(.system(size: 12, weight: .semibold))
-                                Text("Ascend")
-                                    .font(.system(size: 11, weight: .semibold, design: .rounded))
-                            }
-                            .foregroundColor(accent)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .background(
-                                Capsule()
-                                    .fill(accent.opacity(0.1))
-                                    .overlay(
-                                        Capsule()
-                                            .stroke(accent.opacity(0.3), lineWidth: 1)
-                                    )
-                            )
-                        }
-                        .buttonStyle(BouncyPressStyle())
-                        
-                        Spacer()
-                        
-                        // Message Preview button
-                        Button(action: {
-                            HapticManager.shared.lightImpact()
-                            // Show preview of how the message will appear
-                            if !aslManager.currentSentence.isEmpty {
-                                let preview = "Message preview: \(aslManager.currentSentence)"
-                                speakText(preview)
-                            }
-                        }) {
-                            HStack(spacing: 6) {
-                                Image(systemName: "eye.fill")
-                                    .font(.system(size: 12, weight: .semibold))
-                                Text("Preview")
-                                    .font(.system(size: 11, weight: .semibold, design: .rounded))
-                            }
-                            .foregroundColor(.blue)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .background(
-                                Capsule()
-                                    .fill(Color.blue.opacity(0.1))
-                                    .overlay(
-                                        Capsule()
-                                            .stroke(Color.blue.opacity(0.3), lineWidth: 1)
-                                    )
-                            )
-                        }
-                        .buttonStyle(BouncyPressStyle())
-                        
+
                         Spacer()
                         
                         // Send button with proper icon
                         Button(action: {
                             HapticManager.shared.mediumImpact()
-                            sendMessage(aslManager.currentSentence)
+                            sendMessage(composedSentence)
                         }) {
                             HStack(spacing: 8) {
                                 ZStack {
@@ -610,8 +662,8 @@ struct ConversationView: View {
                                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                                     .foregroundColor(accent)
                             }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
                             .background(
                                 Capsule()
                                     .fill(.ultraThinMaterial)
@@ -623,20 +675,20 @@ struct ConversationView: View {
                         }
                         .buttonStyle(BouncyPressStyle())
                     }
-                    .padding(.horizontal, 12)
+                    .padding(.horizontal, 10)
                     
                     // Images strip
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
+                        HStack(spacing: 6) {
                             ForEach(aslSigns) { sign in
-                                ImprovedWordHandCard(sign: sign, accentColor: accent, waveColor: wave)
+                                ImprovedWordHandCard(sign: sign, accentColor: accent, waveColor: wave, cardSize: 60)
                                     .transition(.scale(scale: 0.85).combined(with: .opacity))
                             }
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 8)
                     }
-                    .frame(height: 115)
+                    .frame(height: 94)
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 18, style: .continuous)
@@ -661,14 +713,15 @@ struct ConversationView: View {
                     
                     Button(action: { 
                         aslManager.currentSentence = ""
-                        aslSigns = [] 
+                        aslSigns = []
+                        refreshWordSuggestions()
                     }) {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundColor(wave.opacity(0.7))
                     }
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 7)
                 .background(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
                         .fill(Color.white.opacity(0.7))
@@ -777,7 +830,7 @@ struct ConversationView: View {
     
     // MARK: ━━━━━━━━━━━━┫ HEARING PANEL ┣━━━━━━━━━━━━
     private var hearingPanel: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 8) {
             // Transcript card
             transcriptCard
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -809,21 +862,21 @@ struct ConversationView: View {
             if speech.isEmpty {
                 VStack(spacing: 10) {
                     Image(systemName: "waveform.path")
-                        .font(.system(size: 30))
+                        .font(.system(size: 26))
                         .foregroundColor(wave.opacity(0.5))
                         .breathingScale(min: 0.92, max: 1.08, duration: 2.0)
                     
                     Text("Spoken words appear here")
-                        .font(.system(size: 14, design: .rounded))
+                        .font(.system(size: 13, design: .rounded))
                         .foregroundColor(accent.opacity(0.6))
                 }
             } else {
                 ScrollView {
                     Text(speech)
-                        .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
                         .foregroundColor(Color(red: 0.2, green: 0.14, blue: 0.10))
                         .multilineTextAlignment(.center)
-                        .padding(24)
+                        .padding(18)
                         .animation(.spring(response: 0.4, dampingFraction: 0.8), value: speech)
                 }
             }
@@ -833,15 +886,15 @@ struct ConversationView: View {
     private var speechSignStrip: some View {
         let signs = ASLTextConverter.convertToASL(recognizer.transcript)
         return ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 ForEach(signs) { sign in
-                    ImprovedWordHandCard(sign: sign, accentColor: accent, waveColor: wave)
+                    ImprovedWordHandCard(sign: sign, accentColor: accent, waveColor: wave, cardSize: 58)
                 }
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 7)
         }
-        .frame(height: 95)
+        .frame(height: 82)
         .background(
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .fill(Color.white.opacity(0.5))
@@ -853,12 +906,13 @@ struct ConversationView: View {
     }
     
     private var micSection: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 6) {
             Button(action: {
                 HapticManager.shared.mediumImpact()
                 if recognizer.isListening { 
                     recognizer.stopTranscribing() 
                 } else { 
+                    lastCommittedTranscript = recognizer.transcript
                     recognizer.startTranscribing() 
                 }
             }) {
@@ -867,7 +921,7 @@ struct ConversationView: View {
                     if recognizer.isListening {
                         Circle()
                             .fill(accent.opacity(0.18))
-                            .frame(width: 98, height: 98)
+                            .frame(width: 84, height: 84)
                             .scaleEffect(micPulse ? 1.15 : 0.9)
                             .animation(.easeInOut(duration: 0.9).repeatForever(autoreverses: true), value: micPulse)
                     }
@@ -881,7 +935,7 @@ struct ConversationView: View {
                             startRadius: 0, 
                             endRadius: 38
                         ))
-                        .frame(width: 76, height: 76)
+                        .frame(width: 66, height: 66)
                         .shadow(
                             color: recognizer.isListening ? accent.opacity(0.45) : Color.black.opacity(0.10),
                             radius: recognizer.isListening ? 18 : 6,
@@ -889,19 +943,19 @@ struct ConversationView: View {
                         )
                     
                     Image(systemName: recognizer.isListening ? "mic.fill" : "mic.slash.fill")
-                        .font(.system(size: 30, weight: .medium))
+                        .font(.system(size: 25, weight: .medium))
                         .foregroundColor(.white)
                 }
             }
             .buttonStyle(BouncyPressStyle())
             
             Text(recognizer.isListening ? "Listening…" : "Tap to speak")
-                .font(.system(size: 13, weight: .semibold, design: .rounded))
+                .font(.system(size: 12, weight: .semibold, design: .rounded))
                 .foregroundColor(recognizer.isListening ? accent : accent.opacity(0.5))
                 .animation(.easeInOut(duration: 0.3), value: recognizer.isListening)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 14)
+        .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color.white.opacity(0.62))
@@ -997,6 +1051,7 @@ struct ConversationView: View {
                         aslManager.lockedPredictions = []
                         recognizer.transcript        = ""
                         aslSigns                     = []
+                        aslManager.wordSuggestions   = []
                     }
                 }) {
                     VStack(spacing: 4) {
@@ -1029,10 +1084,10 @@ struct ConversationView: View {
                 }
                 .buttonStyle(BouncyPressStyle())
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
         }
-        .frame(height: 80)
+        .frame(height: 74)
     }
     
     private var switchButtonContent: some View {
@@ -1136,6 +1191,8 @@ struct ConversationView: View {
         aslManager.currentWord += clean
         aslManager.lockedPredictions = []
         aslManager.isHandPresent     = false
+        refreshWordSuggestions()
+        syncASLSigns()
     }
     
     private func commitWord() {
@@ -1149,6 +1206,8 @@ struct ConversationView: View {
         
         aslManager.currentWord = ""
         aslManager.usedGestures.removeAll()
+        refreshWordSuggestions()
+        syncASLSigns()
     }
     
     private func speakText(_ text: String) {
@@ -1156,6 +1215,15 @@ struct ConversationView: View {
         
         // Stop any current speech
         speechSynthesizer.stopSpeaking(at: .immediate)
+        
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(.playAndRecord, mode: .spokenAudio, options: [.duckOthers, .defaultToSpeaker])
+            try audioSession.overrideOutputAudioPort(.speaker)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("🔇 Audio session error: \(error.localizedDescription)")
+        }
         
         let utterance = AVSpeechUtterance(string: text)
         
@@ -1185,7 +1253,102 @@ struct ConversationView: View {
         
         // Clear the current sentence and signs after sending
         aslManager.currentSentence = ""
+        aslManager.currentWord = ""
         aslSigns = []
+        refreshWordSuggestions()
+    }
+    
+    private func refreshWordSuggestions() {
+        if !aslManager.currentWord.isEmpty {
+            aslManager.wordSuggestions = WordSuggestions.getSuggestions(for: aslManager.currentWord, maxResults: 6)
+        } else if let lastWord = aslManager.currentSentence.split(separator: " ").last {
+            aslManager.wordSuggestions = WordSuggestions.getNextWordSuggestions(after: String(lastWord))
+        } else {
+            aslManager.wordSuggestions = WordSuggestions.getSuggestions(for: "", maxResults: 5)
+        }
+    }
+    
+    private func syncASLSigns() {
+        let displayText = composedSentence
+        aslSigns = displayText.isEmpty ? [] : ASLTextConverter.convertToASL(displayText)
+    }
+    
+    private func applySuggestion(_ suggestion: String) {
+        if !aslManager.currentWord.isEmpty {
+            aslManager.currentWord = suggestion
+            commitWord()
+        } else {
+            if aslManager.currentSentence.isEmpty {
+                aslManager.currentSentence = suggestion
+            } else {
+                aslManager.currentSentence += " " + suggestion
+            }
+            refreshWordSuggestions()
+        }
+    }
+    
+    private func finalizeSpeechTranscriptIfNeeded() {
+        let transcript = recognizer.transcript.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !transcript.isEmpty,
+              transcript != "Say something...",
+              transcript != "Listening...",
+              transcript != lastCommittedTranscript,
+              !transcript.hasPrefix("Permission denied"),
+              !transcript.hasPrefix("Audio session error"),
+              !transcript.hasPrefix("Could not") else {
+            return
+        }
+        
+        store.addMessage(to: conversationId, text: transcript, isFromDeafUser: false)
+        lastCommittedTranscript = transcript
+    }
+    
+    private var deafPanel: some View {
+        VStack {
+            cameraView
+            
+            if aslManager.isHandPresent {
+                predictionsPanel
+                    .transition(.asymmetric(
+                        insertion: .scale(scale: 0.92).combined(with: .opacity),
+                        removal: .opacity
+                    ))
+            }
+            
+            if !aslManager.currentWord.isEmpty {
+                wordBuilderBar
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+            
+            if !aslManager.wordSuggestions.isEmpty {
+                sentenceAssistBar
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+            
+            signedWordsStrip
+        }
+        .frame(maxWidth: .infinity, alignment: .top)
+        .opacity(activePanel == .deaf ? 1.0 : 0.4)
+        .scaleEffect(activePanel == .deaf ? 1.0 : 0.97)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(activePanel == .deaf ? accent : Color.clear, lineWidth: 2)
+                .shadow(color: activePanel == .deaf ? accent.opacity(0.3) : Color.clear, radius: 8)
+        )
+        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: activePanel)
+    }
+    
+    private var hearingPanelCard: some View {
+        hearingPanel
+            .frame(maxWidth: .infinity)
+            .opacity(activePanel == .hearing ? 1.0 : 0.4)
+            .scaleEffect(activePanel == .hearing ? 1.0 : 0.97)
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(activePanel == .hearing ? accent : Color.clear, lineWidth: 2)
+                    .shadow(color: activePanel == .hearing ? accent.opacity(0.3) : Color.clear, radius: 8)
+            )
+            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: activePanel)
     }
 }
 
@@ -1194,14 +1357,15 @@ struct ImprovedWordHandCard: View {
     let sign: ASLSignImage
     let accentColor: Color
     let waveColor: Color
+    var cardSize: CGFloat = 72
     
     var body: some View {
         // Handle space character
         if sign.character == " " {
             Spacer()
-                .frame(width: 20, height: 72)
-        } else if let uiImage = ASLImageLoader.loadImage(for: sign.imageUrl) {
-            // Only show card if image is available
+                .frame(width: cardSize * 0.28, height: cardSize)
+        } else {
+            let uiImage = ASLImageLoader.loadImage(for: sign.imageUrl) ?? ASLImageLoader.createFallbackImage(for: sign.character, size: CGSize(width: cardSize, height: cardSize))
             VStack(spacing: 5) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -1210,73 +1374,26 @@ struct ImprovedWordHandCard: View {
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ))
-                        .frame(width: 72, height: 72)
+                        .frame(width: cardSize, height: cardSize)
                         .shadow(color: accentColor.opacity(0.15), radius: 8, x: 0, y: 4)
                     
                     Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 68, height: 68)
+                        .frame(width: cardSize * 0.94, height: cardSize * 0.94)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
                 
                 Text(sign.character)
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .font(.system(size: max(10, cardSize * 0.15), weight: .bold, design: .rounded))
                     .foregroundColor(accentColor.opacity(0.9))
                     .lineLimit(1)
-                    .frame(width: 72)
+                    .frame(width: cardSize)
             }
         }
-        // If no image is available, don't show anything (no placeholder)
     }
 }
 
-// MARK: - Extensions for animations
-extension View {
-    func floatingAnimation(offset: CGFloat, duration: Double) -> some View {
-        self.modifier(FloatingAnimationModifier(offset: offset, duration: duration))
-    }
-    
-    func breathingScale(min: CGFloat, max: CGFloat, duration: Double) -> some View {
-        self.modifier(BreathingScaleModifier(min: min, max: max, duration: duration))
-    }
-}
-
-struct FloatingAnimationModifier: ViewModifier {
-    let offset: CGFloat
-    let duration: Double
-    @State private var isAnimating = false
-    
-    func body(content: Content) -> some View {
-        content
-            .offset(y: isAnimating ? -offset : offset)
-            .animation(.easeInOut(duration: duration).repeatForever(autoreverses: true), value: isAnimating)
-            .onAppear { isAnimating = true }
-    }
-}
-
-struct BreathingScaleModifier: ViewModifier {
-    let min: CGFloat
-    let max: CGFloat
-    let duration: Double
-    @State private var isAnimating = false
-    
-    func body(content: Content) -> some View {
-        content
-            .scaleEffect(isAnimating ? max : min)
-            .animation(.easeInOut(duration: duration).repeatForever(autoreverses: true), value: isAnimating)
-            .onAppear { isAnimating = true }
-    }
-}
-
-// MARK: - Button Styles
-struct BouncyPressStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
-            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
-    }
-}
 
 #Preview {
     ConversationView(store: ConversationStore(), conversationId: UUID())

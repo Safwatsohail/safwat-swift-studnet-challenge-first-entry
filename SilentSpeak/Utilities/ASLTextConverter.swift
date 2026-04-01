@@ -33,6 +33,10 @@ class ASLTextConverter {
         for (wordIndex, word) in words.enumerated() {
             print("🔍 Checking word: '\(word)'")
             
+            if let directWordImage = FullASLDictionary.all.first(where: { $0.word.uppercased() == word })?.imageAssetName,
+               ASLImageLoader.hasImage(for: directWordImage) {
+                signs.append(ASLSignImage(character: word, imageUrl: directWordImage, isWord: true, isLocal: true))
+            } else
             // Check if the word has a direct ASL sign
             if let imageUrl = ASLDictionaryData.getImageUrl(for: word) {
                 let isLocal = ASLDictionaryData.isLocalImage(for: word)
