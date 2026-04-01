@@ -49,6 +49,10 @@ struct ASLCameraPreview: UIViewRepresentable {
            let connection = previewLayer.connection,
            connection.isVideoOrientationSupported {
             connection.videoOrientation = cameraManager.currentOrientation
+            if connection.isVideoMirroringSupported {
+                connection.automaticallyAdjustsVideoMirroring = false
+                connection.isVideoMirrored = cameraManager.isUsingFrontCamera
+            }
         }
         
         CATransaction.commit()

@@ -35,6 +35,10 @@ class ASLCameraManager: NSObject, ObservableObject {
         return captureSession
     }
     
+    var isUsingFrontCamera: Bool {
+        useFrontCamera
+    }
+    
     // MARK: - Orientation Management
     
     private func updateOrientationForDevice() {
@@ -47,25 +51,37 @@ class ASLCameraManager: NSObject, ObservableObject {
         switch interfaceOrientation {
         case .portrait:
             currentOrientation = .portrait
-            visionOrientation = .up
         case .portraitUpsideDown:
             currentOrientation = .portraitUpsideDown
-            visionOrientation = .down
         case .landscapeLeft:
             // UIInterfaceOrientation.landscapeLeft means Home button is on the RIGHT.
             // AVCaptureVideoOrientation.landscapeRight means Home button is on the RIGHT.
             currentOrientation = .landscapeRight
-            visionOrientation = .right
         case .landscapeRight:
             // UIInterfaceOrientation.landscapeRight means Home button is on the LEFT.
             // AVCaptureVideoOrientation.landscapeLeft means Home button is on the LEFT.
             currentOrientation = .landscapeLeft
-            visionOrientation = .left
         default:
             currentOrientation = .portrait
-            visionOrientation = .up
         }
         
+        visionOrientation = exifOrientation(for: currentOrientation, mirrored: useFrontCamera)
+        
+    }
+    
+    private func exifOrientation(for videoOrientation: AVCaptureVideoOrientation, mirrored: Bool) -> CGImagePropertyOrientation {
+        switch (videoOrientation, mirrored) {
+        case (.portrait, false): return .right
+        case (.portrait, true): return .leftMirrored
+        case (.portraitUpsideDown, false): return .left
+        case (.portraitUpsideDown, true): return .rightMirrored
+        case (.landscapeRight, false): return .down
+        case (.landscapeRight, true): return .upMirrored
+        case (.landscapeLeft, false): return .up
+        case (.landscapeLeft, true): return .downMirrored
+        @unknown default:
+            return mirrored ? .leftMirrored : .right
+        }
     }
     
     @objc private func orientationDidChange() {
@@ -121,8 +137,8 @@ class ASLCameraManager: NSObject, ObservableObject {
     
     // IMPROVED: Prediction smoothing with timing control
     private var predictionHistory: [String] = []
-    private let historySize = 12  // Increased for better stability
-    private let minConfidenceThreshold: Float = 0.38  // More tolerant so letters like S still surface
+    private let historySize = 14
+    private let minConfidenceThreshold: Float = 0.42
     
     // IMPROVED: Lock predictions when hand is detected with timing control
     @Published var lockedPredictions: [(gesture: String, confidence: Float)] = []
@@ -134,7 +150,7 @@ class ASLCameraManager: NSObject, ObservableObject {
     private var lastGestureTime: Date = Date()
     private let gestureInterval: TimeInterval = 1.5  // 1.5 seconds between gestures
     private var gestureStabilityFrames = 0
-    private let requiredStabilityFrames = 14  // Faster lock without waiting too long
+    private let requiredStabilityFrames = 16
     
     // Function to lock in current gesture
     func selectCurrentGesture() {
@@ -358,8 +374,9 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+        let orientedImage = ciImage.oriented(visionOrientation)
         
-        if let cgImage = ciContext.createCGImage(ciImage, from: ciImage.extent) {
+        if let cgImage = ciContext.createCGImage(orientedImage, from: orientedImage.extent) {
             publishedFrameCount += 1
             if publishedFrameCount.isMultiple(of: 2) {
                 DispatchQueue.main.async {
@@ -409,7 +426,7 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         // Filter out low confidence landmarks - REDUCED threshold for better detection
-        let filteredLandmarks = landmarks.filter { $0.value.confidence > 0.3 }  // REDUCED from 0.5 to 0.3
+        let filteredLandmarks = landmarks.filter { $0.value.confidence > 0.35 }  // Slightly higher confidence for cleaner classifications
         
         // Store landmarks for drawing
         DispatchQueue.main.async {
@@ -423,7 +440,7 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         // Need minimum landmarks for reliable detection - IMPROVED for S and C
-        if filteredLandmarks.count < 8 {  // REDUCED from 10 to 8 for better S/C detection
+        if filteredLandmarks.count < 9 {
             // Hand unclear - increment absent counter
             handAbsentFrames += 1
             
@@ -472,7 +489,7 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
                     self.topPredictions = predictions
                     
                     // LOCK the predictions for this hand appearance
-                    self.lockedPredictions = predictions
+                    self.lockedPredictions = Array(predictions.prefix(5))
                     self.gestureStabilityFrames = 0  // Reset stability counter
                     
                     if wasHandAbsent {
@@ -515,12 +532,12 @@ extension ASLCameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
                             let agreement = Float(mostCommon.value) / Float(self.predictionHistory.count)
                             let hasStability = self.gestureStabilityFrames >= self.requiredStabilityFrames
                             
-                            if agreement >= 0.60 && hasStability {
+                            if agreement >= 0.68 && hasStability {
                                 self.currentGesture = mostCommon.key
                                 self.confidence = topPrediction.confidence
                                 
                                 // Log stable prediction
-                            } else if agreement >= 0.50 {
+                            } else if agreement >= 0.56 {
                                 // Good agreement but need more stability
                                 self.currentGesture = "Stabilizing \(mostCommon.key)..."
                                 self.confidence = topPrediction.confidence * 0.8
