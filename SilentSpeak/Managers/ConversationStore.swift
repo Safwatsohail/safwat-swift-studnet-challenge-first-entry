@@ -5,6 +5,8 @@ class ConversationStore: ObservableObject {
     @Published var conversations: [Conversation] = []
     @Published var savedPhrases: [SavedPhrase] = []
     
+    @AppStorage("autoSave") private var autoSave = true
+    
     private let conversationsKey = "saved_conversations"
     private let phrasesKey = "saved_phrases"
     
@@ -24,6 +26,7 @@ class ConversationStore: ObservableObject {
     }
     
     func saveConversations() {
+        guard autoSave else { return }
         if let encoded = try? JSONEncoder().encode(conversations) {
             UserDefaults.standard.set(encoded, forKey: conversationsKey)
         }

@@ -2,10 +2,13 @@ import Foundation
 import Speech
 import AVFoundation
 import Combine
+import SwiftUI
 
 class SpeechRecognizer: ObservableObject {
     @Published var transcript = "Say something..."
     @Published var isListening = false
+    
+    @AppStorage("micSensitivity") private var micSensitivity = 0.5
     
     private lazy var audioEngine = AVAudioEngine()
     private lazy var speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: currentLanguage))
@@ -51,6 +54,9 @@ class SpeechRecognizer: ObservableObject {
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            if audioSession.isInputGainSettable {
+                try audioSession.setInputGain(Float(micSensitivity))
+            }
         } catch {
             self.transcript = "Audio session error: \(error.localizedDescription)"
             return

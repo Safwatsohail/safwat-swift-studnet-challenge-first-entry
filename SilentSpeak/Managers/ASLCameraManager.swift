@@ -17,6 +17,7 @@ class ASLCameraManager: NSObject, ObservableObject {
     @Published var handLandmarks: [VNHumanHandPoseObservation.JointName: VNRecognizedPoint]? = nil  // For drawing
     
     @AppStorage("cameraPosition") private var useFrontCamera = true
+    @AppStorage("gestureSpeed") private var gestureSpeed = 1.0
     
     private let captureSession = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
@@ -148,9 +149,15 @@ class ASLCameraManager: NSObject, ObservableObject {
     
     // NEW: Gesture timing control (1.5 second intervals)
     private var lastGestureTime: Date = Date()
-    private let gestureInterval: TimeInterval = 1.5  // 1.5 seconds between gestures
     private var gestureStabilityFrames = 0
-    private let requiredStabilityFrames = 16
+    
+    private var gestureInterval: TimeInterval {
+        max(0.65, 1.65 - (gestureSpeed * 0.7))
+    }
+    
+    private var requiredStabilityFrames: Int {
+        max(8, Int(18 - (gestureSpeed * 6)))
+    }
     
     // Function to lock in current gesture
     func selectCurrentGesture() {

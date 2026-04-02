@@ -12,6 +12,9 @@ struct ConversationView: View {
     @AppStorage("selectedVoice") private var selectedVoice = "com.apple.ttsbundle.Samantha-compact"
     @AppStorage("speechRate") private var speechRate: Double = 0.5
     @AppStorage("speechPitch") private var speechPitch: Double = 1.0
+    @AppStorage("fontSize") private var fontSize: Double = 24
+    @AppStorage("autoPlayAudio") private var autoPlayAudio = true
+    @AppStorage("showSubtitles") private var showSubtitles = true
     
     @State private var aslSigns: [ASLSignImage] = []
     @State private var activePanel: ActivePanel = .deaf
@@ -82,10 +85,8 @@ struct ConversationView: View {
                                 }
                                 .frame(maxWidth: .infinity, alignment: .top)
                                 
-                                if !isSmallPhone {
-                                    messageHistoryBox
-                                        .frame(height: min(108, geometry.size.height * 0.14))
-                                }
+                                messageHistoryBox
+                                    .frame(height: isSmallPhone ? 170 : min(108, geometry.size.height * 0.14))
                             }
                             .padding(.horizontal, isSmallPhone ? 6 : 8)
                             .padding(.bottom, 10)
@@ -778,6 +779,7 @@ struct ConversationView: View {
                 }
                 .padding(.horizontal, 8)
             }
+            .scrollIndicators(.visible)
         }
         .padding(12)
         .background(
@@ -813,9 +815,9 @@ struct ConversationView: View {
                 }
                 
                 Text(message.text)
-                    .font(.system(size: 12, design: .rounded))
+                    .font(.system(size: max(12, min(18, fontSize * 0.52)), design: .rounded))
                     .foregroundColor(Color(red: 0.2, green: 0.14, blue: 0.10))
-                    .lineLimit(2)
+                    .lineLimit(3)
             }
             
             Spacer()
@@ -870,10 +872,20 @@ struct ConversationView: View {
                         .font(.system(size: 13, design: .rounded))
                         .foregroundColor(accent.opacity(0.6))
                 }
+            } else if !showSubtitles {
+                VStack(spacing: 10) {
+                    Image(systemName: "captions.bubble.fill")
+                        .font(.system(size: 28))
+                        .foregroundColor(wave.opacity(0.45))
+                    Text("Subtitles are hidden in Settings")
+                        .font(.system(size: 14, design: .rounded))
+                        .foregroundColor(accent.opacity(0.6))
+                        .multilineTextAlignment(.center)
+                }
             } else {
                 ScrollView {
                     Text(speech)
-                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .font(.system(size: CGFloat(fontSize), weight: .semibold, design: .rounded))
                         .foregroundColor(Color(red: 0.2, green: 0.14, blue: 0.10))
                         .multilineTextAlignment(.center)
                         .padding(18)
@@ -1249,7 +1261,9 @@ struct ConversationView: View {
         store.addMessage(to: conversationId, text: text, isFromDeafUser: true)
         
         // Speak the message aloud for the hearing person to hear
-        speakText(text)
+        if autoPlayAudio {
+            speakText(text)
+        }
         
         // Clear the current sentence and signs after sending
         aslManager.currentSentence = ""
